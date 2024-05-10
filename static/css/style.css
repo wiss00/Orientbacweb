@@ -83,7 +83,7 @@ a:hover {
   height: 100vh;
   display: flex;
   align-items: center;
-  z-index: 997;
+  z-index: 999;
   overflow-y: auto;
 }
 
@@ -216,7 +216,7 @@ a:hover {
 # Navigation Menu
 --------------------------------------------------------------*/
 /**
-* Desktop Navigation 
+* Desktop Navigation
 */
 .navbar {
   padding: 0;
@@ -288,7 +288,7 @@ a:hover {
 }
 
 /**
-* Mobile Navigation 
+* Mobile Navigation
 */
 .mobile-nav-toggle {
   color: #fff;
@@ -307,8 +307,13 @@ a:hover {
     display: block;
   }
 
-  .navbar ul {
-    display: none;
+
+    .navbar ul {
+    display: none; /* Hide the navigation menu by default on mobile */
+  }
+
+  .navbar ul.show {
+    display: block; /* Show the navigation menu when the toggle button is clicked */
   }
 }
 
@@ -319,9 +324,9 @@ a:hover {
   right: 0;
   left: 0;
   bottom: 0;
-  background: white;
+  background: rgba(29, 98,167 , 0.9);
   transition: 0.3s;
-  z-index: 999;
+  z-index: 99999;
   margin-top: 0;
 }
 
@@ -369,7 +374,7 @@ section {
   bottom: 100%;
   opacity: 0;
   transition: ease-in-out 0.4s;
-  z-index: 2;
+  z-index: -1;
   margin: 0 auto;
 }
 
@@ -587,7 +592,7 @@ section .container {
   border-radius: 50%;
   margin: -40px 0 0 40px;
   position: relative;
-  z-index: 2;
+  z-index: -1;
   border: 6px solid rgba(255, 255, 255, 0.12);
 }
 
@@ -631,7 +636,7 @@ section .container {
   position: relative;
   border-radius: 6px;
   position: relative;
-  z-index: 1;
+  z-index: -1;
 }
 
 .testimonials .swiper-pagination {
@@ -910,7 +915,7 @@ section .container {
   transition: 0.3s;
   position: relative;
   overflow: hidden;
-  z-index: 1;
+  z-index: -1;
   background: rgba(0, 0, 0, 0.6);
 }
 
@@ -923,7 +928,7 @@ section .container {
   top: 30px;
   bottom: 30px;
   transition: all ease-in-out 0.3s;
-  z-index: 2;
+  z-index: -1;
   opacity: 0;
 }
 
@@ -935,7 +940,7 @@ section .container {
   right: 0;
   bottom: 0;
   text-align: center;
-  z-index: 3;
+  z-index: -1;
   transition: all ease-in-out 0.3s;
   display: flex;
   flex-direction: column;
@@ -954,7 +959,7 @@ section .container {
   border-top: 3px solid #fff;
   border-left: 3px solid #fff;
   transition: all 0.5s ease 0s;
-  z-index: 9994;
+  z-index: -1;
 }
 
 .portfolio .portfolio-wrap .portfolio-info::after {
@@ -968,7 +973,7 @@ section .container {
   border-bottom: 3px solid #fff;
   border-right: 3px solid #fff;
   transition: all 0.5s ease 0s;
-  z-index: 9994;
+  z-index: -1;
 }
 
 .portfolio .portfolio-wrap .portfolio-info h4 {
@@ -987,7 +992,7 @@ section .container {
 
 .portfolio .portfolio-wrap .portfolio-links {
   text-align: center;
-  z-index: 4;
+  z-index: -1;
 }
 
 .portfolio .portfolio-wrap .portfolio-links a {
@@ -1265,7 +1270,7 @@ section .container {
   text-align: right;
   font-size: 13px;
   color: #fff;
-  z-index: 999999;
+  z-index: -1;
 }
 
 @media (max-width: 992px) {

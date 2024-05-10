@@ -155,9 +155,6 @@ def download_cnc_directory(cnc_name):
     else:
         return "Directory not found"
 
-@app.route("/resume")
-def resume():
-    return render_template("resume.html")
 
 
 @app.route("/Secteur")
