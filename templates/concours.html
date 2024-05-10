@@ -9,9 +9,9 @@ Voici quelques exemples de concours d’admission aux grandes écoles et facult�
   <div class="container">
     <div class="row">
       {% for key, value in concour.items() %}
-      <div class="col-sm-6 col-md-4 mb-3">
+<div class="col-sm-6 col-md-4 mb-3" onclick="window.open('{{ url_for('drive_link', cnc_name=key) }}', '_blank')" style="cursor: pointer;">
         <div class="icon-box" style=" border-color:white;">
-          <h4 style="font-size:35px"><a href="{{ url_for('download_cnc_directory', cnc_name=key) }}" target="_blank">{{ key }}</a></h4>
+          <h4 style="font-size:35px"><a href="{{ url_for('drive_link', cnc_name=key) }}" target="_blank">{{ key }}</a></h4>
         </div>
       </div>
       {% if loop.index == 3 %}

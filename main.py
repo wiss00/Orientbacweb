@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, send_file, abort, send_from_directory
+from flask import Flask, render_template, request, send_file, abort, send_from_directory, redirect
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
@@ -79,11 +79,18 @@ secteurs = {
             "name": "Secteur militaire",
             "icon": "bi bi-shield",
             "pdfdisplay": {"Academie Royal militaire de Meknes": "Académie royale militaire de Meknès.pdf",
-                           "Ecole Royal de l'Air Marrakesh": "ERA OFFICIER.pdf",
-                           "École royale du service de santé militaire(médecine,dentiste,pharmacien)": "sante militaire medcin.pdf",
+                           "Officier des forces auxiliaires": "officiers des forces auxiliaires.pdf",
+                           "Sous Officiers des Forces Auxiliaires": "sous officiers des forces auxiliaires.pdf",
+                           "sous officier arme de terre": "sous officier arme de terre (1).pdf",
+                           "ERA officier": "ERA OFFICIER.pdf",
+                           "ERA sous officier": "ERA sous OFFICIER.pdf",
+                           "École royale du service de santé militaire": "sante militaire medcin.pdf",
                            "École royale du service de santé militaire(Vétérinaire)": "sante miliTAIRE veterinaire.pdf",
-                           "Sous Officiers des Forces Auxiliaires": "sous officiers des forces auxiliaires.pdf"}
-        },
+                           "École royale naval casablanca officier": "ern officier.pdf",
+                           "École royale naval casablanca sous officier": "ern sous officier.pdf",
+                           "Ecole de la Gendarmerie Royale": "Ecole de la Gendarmerie Royale.pdf",
+                           "Institut de la Police Royale": "la police.pdf"
+                           }},
         "5": {
             "name": "Secteur de l’Education",
             "icon": "bi bi-book",
@@ -97,26 +104,28 @@ secteurs = {
         "6": {
             "name": "Classes Préparatoires aux Grandes Ecoles",
             "icon": "bi bi-infinity",
-            "pdfdisplay": {"Classes Préparatoires aux Grandes Ecoles": "Classes Préparatoires aux Grandes Écoles CPGE.pdf",
-                           "Concours national commun CNAEM & CNC": "Concours national commun CNAEM & CNC.pdf",
-                           "Ecoles superieures participants aux concours": "Ecoles superieures participants aux concours.pdf",
-                           }
+            "pdfdisplay": {
+                "Classes Préparatoires aux Grandes Ecoles": "Classes Préparatoires aux Grandes Écoles CPGE.pdf",
+                "Concours national commun CNAEM & CNC": "Concours national commun CNAEM & CNC.pdf",
+                "Ecoles superieures participants aux concours": "Ecoles superieures participants aux concours.pdf",
+            }
         },
         "7": {
             "name": "Secteur du commerce et de la gestion",
             "icon": "bi bi-cash-coin",
-            "pdfdisplay": {"Ecoles nationales de commerce et de gestion ENCG": "Écoles nationales de commerce et de gestion ENCG  (1).pdf",
-                           "Institut supérieur de commerce et d'administration des entreprises ISCAE": "Institut supérieur de commerce et d'administration des entreprises ISCAE.pdf", }
+            "pdfdisplay": {
+                "Ecoles nationales de commerce et de gestion ENCG": "Écoles nationales de commerce et de gestion ENCG  (1).pdf",
+                "Institut supérieur de commerce et d'administration des entreprises ISCAE": "Institut supérieur de commerce et d'administration des entreprises ISCAE.pdf", }
 
         }
     }
 }
 
-concour = {"ENSAM": "./static/cnc_directories/ENSAM",
-           "ENSA": "./static/cnc_directories/ENSA",
-           "ENCG": "./static/cnc_directories/ENCG",
-           "ENA": "./static/cnc_directories/ENA",
-           "MEDECINE": "./static/cnc_directories/MEDECINE"}
+concour = {"ENSAM": "https://drive.google.com/drive/folders/1KIwZ6lIB3SJUHGYnyNTjRT_EyIb_Y7OI?usp=drive_link",
+           "ENSA": "https://drive.google.com/drive/folders/1jqaEgBl8oJkHifMqqwCZjy_gKQgRMyhL?usp=drive_link",
+           "ENCG": "https://drive.google.com/drive/folders/1MMMbs714DUgBsIoepPYkF1ey0SkMlLrG?usp=drive_link",
+           "ENA": "https://drive.google.com/drive/folders/1fYWTJEGK1K7pMI6S_urlzx17abFU6bJ2?usp=drive_link",
+           "MEDECINE": "https://drive.google.com/drive/folders/1Ax9mgVsETh66t22vxGrVtOermq8gLL8P?usp=drive_link"}
 
 
 @app.route('/')
@@ -143,18 +152,12 @@ def concours():
 #     return send_file('static/example.pdf')
 
 @app.route('/download/<cnc_name>')
-def download_cnc_directory(cnc_name):
+def drive_link(cnc_name):
     if cnc_name in concour:
-        directory = concour[cnc_name]
-        zipf = ZipFile(f'{cnc_name}.zip', 'w')
-        for root, dirs, files in os.walk(directory):
-            for file in files:
-                zipf.write(os.path.join(root, file), os.path.relpath(os.path.join(root, file), directory))
-        zipf.close()
-        return send_file(f'{cnc_name}.zip', as_attachment=True)
+        link = concour[cnc_name]
+        return redirect(link)
     else:
-        return "Directory not found"
-
+        return "link not found"
 
 
 @app.route("/Secteur")

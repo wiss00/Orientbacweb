@@ -10,7 +10,7 @@
                 <div class="interests">
                     <div class="row">
                         {% for key, value in sector.pdfdisplay.items() %}
-                        <div class="col-md-6 mb-4">
+                    <div class="col-md-6 mb-4" onclick="window.open('{{ url_for('download', file_name=value) }}', '_blank')" style="cursor: pointer;">
                             <div class="icon-box text-center">
                                 <i class="bi bi-gear"></i>
                                 <h3>{{ key }}</h3>
@@ -30,13 +30,3 @@
     }
 </script>
 
-  <script src="static/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="static/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="static/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="static/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="static/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="static/vendor/php-email-form/validate.js"></script>
-
-  <!-- Template Main JS File -->
-  <script src="static/js/main.js"></script>

@@ -1,10 +1,10 @@
 {% include "header.html" %}
   <!-- ======= Services Section ======= -->
   <section id="services" class="services section-show">
-  <div class="container">
+  <div class="container" >
     <div class="row">
 {% for key, sector in secteurs.sectors.items() %}
-<div class="col-sm-6 col-md-3 mb-4">
+<div class="col-sm-6 col-md-3 mb-4" onclick="window.location='{{ url_for('school', sector_id=key) }}'" style="cursor: pointer;">
     <div class="icon-box">
         <div class="icon"><i class="{{ sector.icon }}"></i></div>
         <h4><a href="{{ url_for('school', sector_id=key) }}">{{ sector.name }}</a></h4>
