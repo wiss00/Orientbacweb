@@ -1,0 +1,32 @@
+{% include "header.html" %}
+
+
+<!-- ======= Portfolio Section ======= -->
+<section id="school" class="school section-show">
+    <h1 class="own text-center">{{ sector.name }}</h1>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="interests">
+                    <div class="row">
+                        {% for key, value in sector.pdfdisplay.items() %}
+                        <div class="col-md-6 mb-4">
+                            <div class="icon-box text-center">
+                                <i class="bi bi-gear"></i>
+                                <h3>{{ key }}</h3>
+                                <a href="{{ url_for('download', file_name=value) }}" target="_blank" class="download btn">Ouvrir PDF</a>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    function openPDF(url) {
+        window.open(url, '_blank');
+    }
+</script>
+

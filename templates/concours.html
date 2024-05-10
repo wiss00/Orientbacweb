@@ -1,0 +1,26 @@
+{% include "header.html" %}
+<!-- ======= Services Section ======= -->
+<section id="concour" class="concour section-show" style="margin-top:0%">
+    <p class="concourp">
+Bienvenue dans l'univers des concours d'admission, où chaque défi est une opportunité de briller!
+Découvrez les concours les plus prestigieux, familiarisez-vous avec leurs spécificités et explorez les stratégies gagnantes pour exceller.
+Voici quelques exemples de concours d’admission aux grandes écoles et facultés aux Maroc:    </p>
+
+  <div class="container">
+    <div class="row">
+      {% for key, value in concour.items() %}
+      <div class="col-sm-6 col-md-4 mb-3">
+        <div class="icon-box" style=" border-color:white;">
+          <h4 style="font-size:35px"><a href="{{ url_for('download_cnc_directory', cnc_name=key) }}" target="_blank">{{ key }}</a></h4>
+        </div>
+      </div>
+      {% if loop.index == 3 %}
+        </div>
+        <div class="row justify-content-md-center">
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+
