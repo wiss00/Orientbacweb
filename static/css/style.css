@@ -1532,3 +1532,24 @@ margin:2%;
          1px -1px 0 rgb(29 98 167 ),
         -1px  1px 0 rgb(29 98 167 ),
          1px  1px 0 rgb(29 98 167 ); }
+
+.video-text-pair {
+
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center text vertically relative to the video */
+    gap: 20px; /* Space between the video and text */
+    margin-bottom: 20px; /* Space between pairs */
+    max-width: 100%;
+    flex-wrap: wrap; /* Ensure responsiveness */
+}
+
+video {
+    width: 225px; /* Set a fixed width for each video */
+    height: 400px; /* Set a fixed height for each video to maintain 9:16 ratio */
+    border-radius: 8px;
+}
+
+.text {
+    max-width: 300px; /* You can set this to any width you prefer */
+}

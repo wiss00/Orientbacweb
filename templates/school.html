@@ -1,16 +1,47 @@
 {% include "header.html" %}
 
-
 <!-- ======= Portfolio Section ======= -->
 <section id="school" class="school section-show">
     <h1 class="own text-center">{{ sector.name }}</h1>
+    {% if sector.name == "Secteur ingénierie" %}
+    <div class="video-container">
+        <div class="video-text-pair">
+            <div class="video-wrapper">
+                <video id="video1" controls>
+                    <source src="{{ url_for('static', filename='videos/video2.mp4') }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="text">
+                <h2>Experience d'un élève ingenieur à ENSA KENITRA</h2>
+
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    {% if sector.name == "Secteur militaire" %}
+    <div class="video-container">
+        <div class="video-text-pair">
+            <div class="video-wrapper">
+                <video id="video" controls>
+                    <source src="{{ url_for('static', filename='videos/video1.mp4') }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="text">
+                <h2>Experience d'un étudiant en militaire</h2>
+
+            </div>
+        </div>
+    </div>
+    {% endif %}
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8">
                 <div class="interests">
                     <div class="row">
                         {% for key, value in sector.pdfdisplay.items() %}
-                    <div class="col-md-6 mb-4" onclick="window.open('{{ url_for('download', file_name=value) }}', '_blank')" style="cursor: pointer;">
+                        <div class="col-md-6 mb-4" onclick="window.open('{{ url_for('download', file_name=value) }}', '_blank')" style="cursor: pointer;">
                             <div class="icon-box text-center">
                                 <i class="bi bi-gear"></i>
                                 <h3>{{ key }}</h3>
@@ -23,9 +54,4 @@
         </div>
     </div>
 </section>
-<script>
-    function openPDF(url) {
-        window.open(url, '_blank');
-    }
-</script>
 
