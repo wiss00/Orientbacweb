@@ -42,13 +42,10 @@ secteurs = {
         "1": {
             "name": "Secteur ingénierie",
             "icon": "bi bi-gear",
-            "pdfdisplay": {"Ecole Nationale d'Architécture ENA": "École Nationale d'Agriculture ENA.pdf",
-                           "Ecole Nationale Supérieure d'Arts et Métiers ENSAM": "École Nationale Supérieure D'arts Et "
-                                                                                 "Métiers ENSAM.pdf",
-                           "Ecoles Nationale des Sciences Appliquées ENSA": "Écoles nationales des sciences appliquées "
-                                                                            "ENSA.pdf",
-                           "Institut National d'Aménagment et d'Urbanisme INAU": "Institut National d'Aménagement et "
-                                                                                 "d'Urbanisme INAU.pdf",
+            "pdfdisplay": {"Ecole Nationale d'Architécture ENA": "ENA.pdf",
+                           "Ecole Nationale Supérieure d'Arts et Métiers ENSAM": "ENSAM.pdf",
+                           "Ecoles Nationale des Sciences Appliquées ENSA": "Écoles nationales des sciences appliquées ENSA.pdf",
+                           "Institut National d'Aménagment et d'Urbanisme INAU": "INAU.pdf",
                            "Faculté des Sciences et Techniques FST": "Faculté des Sciences et Techniques FST.pdf",
                            "Ecole Supérieure de Technologie EST": "Ecole Supérieure de Technologie EST.pdf",
                            "Ecole Nationale Supérieure de Chimie ENSCK": "Ecole Nationale Supérieure de Chimie ENSCK.pdf",
@@ -61,9 +58,8 @@ secteurs = {
             "name": "Secteur agricole",
             "icon": "bi bi-tree",
             "pdfdisplay": {"Instiut agronomique et vétérinaire IAV": "Institut agronomique et vétérinaire IAV.pdf",
-                           "Ecole National d'Agriculture ENAM": "Ecole Nationale d'Agriculture ENAM.pdf",
-                           "Ecole National Forestière d'Ingénieurs ENFI": "École Nationale Forestière d'Ingénieurs "
-                                                                          "ENFI.pdf",
+                           "Ecole National d'Agriculture ENAM": "ENAM.pdf",
+                           "Ecole National Forestière d'Ingénieurs ENFI":"ENFI.pdf",
                            "Complexe Horticole d'Agadir CHA": "Complexe Horticole d’Agadir CHA.pdf",
                            }
         },
@@ -95,11 +91,11 @@ secteurs = {
             "name": "Secteur de l’Education",
             "icon": "bi bi-book",
             "pdfdisplay": {
-                "Centres Régionaux des Métiers de l'éducation et le la Formation CRMEF": "Centres Régionaux des Métiers de l'Éducation et de la Formation CRMEF (1).pdf",
-                "Cycle de Licence en Education": "Cycle de Licence en Education CLE (1).pdf",
-                "Ecole normale supérieure ENS": "École normale supérieure ENS (1).pdf",
-                "Ecoles supérieures d'enseignement et de formation ESEF": "Ecoles supérieures d'enseignement et de formation ESEF (1).pdf",
-                "Faculté des Sciences de l'Education FSE": "Faculté des Sciences de l'Éducation FSE (1).pdf"}
+                "Centres Régionaux des Métiers de l'éducation et le la Formation CRMEF": "CRMEF.pdf",
+                "Cycle de Licence en Education": "CLE.pdf",
+                "Ecole normale supérieure ENS": "ENS.pdf",
+                "Ecoles supérieures d'enseignement et de formation ESEF": "ESEF.pdf",
+                "Faculté des Sciences de l'Education FSE": "FSE.pdf"}
         },
         "6": {
             "name": "Classes Préparatoires aux Grandes Ecoles",
@@ -114,8 +110,8 @@ secteurs = {
             "name": "Secteur du commerce et de la gestion",
             "icon": "bi bi-cash-coin",
             "pdfdisplay": {
-                "Ecoles nationales de commerce et de gestion ENCG": "Écoles nationales de commerce et de gestion ENCG  (1).pdf",
-                "Institut supérieur de commerce et d'administration des entreprises ISCAE": "Institut supérieur de commerce et d'administration des entreprises ISCAE.pdf", }
+                "Ecoles nationales de commerce et de gestion ENCG": "ENCG.pdf",
+                "Institut supérieur de commerce et d'administration des entreprises ISCAE": "ISCAE.pdf", }
 
         }
     }
